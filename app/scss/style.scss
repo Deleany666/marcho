@@ -3,7 +3,147 @@
 @import 'reset';
 @import 'global';
 
+.header {
+  padding: 50px 0;
 
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+  }
+
+  &__item+.menu__item {
+    padding-left: 35px;
+  }
+
+  &__link {
+    color: #436372;
+    font-size: 15px;
+  }
+}
+
+.user-nav {
+  display: flex;
+
+  &__link-search {
+    width: 50px;
+    height: 50px;
+    background-color: #edf1f4;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__link-search::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-image: url('../images/header__icons/search.svg');
+  }
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #fcd7b6;
+    margin-left: 20px;
+  }
+
+  &__link-heart {
+    position: relative;
+  }
+
+  &__link-heart::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-image: url('../images/header__icons/heart.svg');
+    border-right: #edf1f4;
+  }
+
+  &__num {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 10px;
+    line-height: 15px;
+    @extend %DMSans-400;
+  }
+
+  &__num-heart {
+    left: 50px;
+    top: 10px;
+  }
+
+  &__num-shape {
+    right: 30px;
+    top: 10px;
+  }
+
+  &__link-shape {
+    position: relative;
+  }
+
+  &__border {
+    margin-top: 10px;
+    border-right: 1px solid #fde7d3;
+    height: 32px;
+  }
+
+  &__link-shape::before {
+    content: "";
+    position: absolute;
+    right: 40px;
+    top: 15px;
+    width: 19px;
+    height: 17px;
+    background-repeat: no-repeat;
+    background-image: url('../images/header__icons/shape.svg');
+  }
+
+  &__link-dots {
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 50%;
+    background-color: #a3bbc8;
+    position: relative;
+  }
+
+  &__link-dots::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-image: url('../images/header__icons/dots.svg');
+  }
+
+  &__link:not(:first-child) {
+    padding-left: 20px;
+  }
+}
 
 
 @import 'media';
