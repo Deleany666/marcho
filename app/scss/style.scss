@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 .header {
@@ -29,6 +30,7 @@
   &__link {
     color: #436372;
     font-size: 15px;
+    line-height: 0.8;
   }
 }
 
@@ -152,15 +154,20 @@
 
 
 .footer {
-  
+  width: 1250px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .footer-top {
-  width: 1180px;
-  padding-top: 85px 0 70px;
   border-bottom: 2px solid #dae4e9;
   display: flex;
-  align-items: flex-start;
+  height: 290px;
+
+  &__nav {
+    width: 220px;
+    margin-right: 80px;
+  }
 
   &__items {
     width: 270px;
@@ -171,35 +178,38 @@
   }
 
   &__title {
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
-    margin-bottom: 25px;
     color: #1f2044;
     @extend %DMSans-700;
-    line-height: 1.7;
+    margin-top: 27px;
+    margin-bottom: 20px;
   }
 
   &__logo {
-    margin-bottom: 25px;
     display: block;
+    margin-top: 10px;
+    margin-bottom: 25px;
   }
 
   &__address,
   &__phone,
   &__email {
     display: block;
-    line-height: 1.7;
+    margin-bottom: 10px;
+    line-height: 1.75;
   }
 
   &__item {
-    margin-bottom: 20px;
+    margin-bottom: 13px;
   }
 
   &__text {
-    margin-bottom: 25px;
     font-size: 14px;
     @extend %Rubick-400;
     color: $link;
+    line-height: 1.7;
+    margin-bottom: 33px;
   }
 
   &__form-input {
@@ -215,20 +225,21 @@
       color: #234969;
       @extend %DMSans-400
     }
-
   }
 
   &__form-btn {
     border: none;
     background-color: #234969;
     color: #fff;
-    padding: 9px;
-    cursor: pointer
+    padding: 10px 15px;
+    cursor: pointer;
+    @extend %DMSans-400;
+    font-size: 14px;
   }
 }
 
 .footer-bottom {
-  width: 1180px;
+
   height: 90px;
   display: flex;
   justify-content: space-between;
@@ -242,7 +253,6 @@
 
   &__register {
     display: flex;
-
   }
 
   &__object:not(:first-child) {
@@ -255,6 +265,279 @@
   }
 }
 
+.top-slider {
+
+  &__inner {
+    background-color: #fcd7b6;
+    height: 820px;
+  }
+
+  &__wrap {
+    display: block !important;
+    max-width: 1460px;
+    margin: 0 auto;
+    margin-top: 93px;
+  }
+
+  &__item {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 145px;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    max-width: 470px;
+    font-size: 72px;
+    line-height: 1;
+    @extend %Rubick-500;
+    margin-bottom: 25px;
+  }
+
+  &__content {
+    width: 470px;
+    height: 390px
+  }
+
+  &__text {
+    @extend %Rubick-400;
+    margin-bottom: 55px;
+    max-width: 360px;
+    line-height: 1.67;
+    font-size: 18px;
+  }
+
+  &__link {
+    @extend %btn;
+    padding: 20px 105px 20px 25px;
+    position: relative;
+  }
+
+  &__link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 25px;
+    left: 160px;
+    background-repeat: no-repeat;
+    background-image: url('../images/slider/arrow.svg');
+  }
+
+  &__gradient {
+    display: flex;
+    align-items: center;
+    width: 785px;
+    height: 630px;
+    position: relative;
+  }
+
+  &__gradient::after {
+    content: "";
+    position: absolute;
+    right: 30px;
+    width: 635px;
+    height: 635px;
+    border-radius: 50%;
+    background: linear-gradient(-90deg, #fff, transparent);
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+
+    li {
+      padding: 0 5px;
+
+      button {
+        padding: 0;
+        font-size: 11px;
+        background-color: #fde3cc;
+        border: none;
+        width: 29px;
+        height: 29px;
+        border-radius: 50%;
+        color: #243f4d;
+        transition: background-color .2s;
+      }
+
+      button:hover {
+        background-color: #fff;
+      }
+
+      &.slick-active {
+        button {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.product {
+  background-color: #fbfbfb;
+}
+
+.service {
+  display: flex;
+  justify-content: space-between;
+  padding: 41px 150px;
+  background-color: #fef7f0;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__wrap {
+    width: 200px;
+    margin-left: 25px;
+  }
+
+  &__title {
+    font-size: 18px;
+    @extend %DMSans-700;
+    color: #414141;
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    font-size: 16px;
+    @extend %DMSans-400;
+    color: #676665;
+    line-height: 1.875;
+  }
+
+  &__subtext {
+    width: 220px;
+  }
+}
+
+.products {
+  padding: 65px 0;
+  text-align: center;
+
+  &__wrap {
+    width: 1170px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 36px;
+    @extend %DMSans-700;
+    line-height: 1.2;
+    color: #191919;
+    margin-bottom: 25px;
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #8b8b8b;
+    @extend %DMSans-700;
+    line-height: 1.2;
+    margin-bottom: 70px;
+    padding: 0 12px;
+    outline: transparent;
+    transition: color 0.3s;
+  }
+
+  &__btn:hover {
+    color: #1a1a1a;
+  }
+
+  &__items {
+    display: grid;
+    grid-row-gap: 40px;
+    grid-column-gap: 30px;
+    height: 800px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__item {
+    background-color: #fff;
+    padding: 20px 35px 25px 35px;
+    width: 270px;
+    height: 380px;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 15%;
+    display: flex;
+    align-items: flex-end;
+
+    &:hover {
+      .products__buttons-general {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  &__subtitle {
+    font-size: 16px;
+
+    @extend %DMSans-500;
+    text-align: center;
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 2.5;
+    @extend %DMSans-700;
+    color: #a3bbc8;
+  }
+
+
+
+  &__inner {
+    width: 270px;
+    text-align: center;
+    position: relative;
+  }
+
+  &__buttons-general {
+    content: "";
+    position: absolute;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all .3s;
+    opacity: 0;
+  }
+
+  &__buttons-general:hover {
+    background-color: #a3bbc8;
+  }
+
+
+  &__buttons-search {
+    top: -103px;
+    left: 15px;
+    background-image: url('../images/header__icons/search.svg');
+  }
+
+  &__buttons-shape {
+    top: -103px;
+    left: 77px;
+    background-image: url('../images/header__icons/shape.svg');
+  }
+
+  &__buttons-heart {
+    top: -103px;
+    left: 137px;
+    background-image: url('../images/header__icons/heart.svg');
+  }
+}
 
 
 
